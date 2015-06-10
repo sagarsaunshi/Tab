@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>TAB design</title>
+<link rel="stylesheet"  href="tabs.css" />
+<script  src="jquery-1.7.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		$(".tab_content").hide();
+		$(".tab_content:first").show(); 
+
+		$("ul.tabs li").click(function() {
+		$("ul.tabs li").removeClass("active");
+		$(this).addClass("active");
+		$(".tab_content").hide();
+		var activeTab = $(this).attr("rel"); 
+		$("#"+activeTab).fadeIn();
+		});
+	});
+
+</script>
+</head>
+
+<body>
+<img class="background" src="file:///C|/wamp/www/sagarsaunshi/background.jpg">
+<div id="container">
+
+  <ul class="tabs"> 
+        <li class="active" rel="tab1">Recent Tuts</li>
+        <li rel="tab2"> Most Viewed</li>
+       
+    </ul>
+
+<div class="tab_container"> 
+
+     <div id="tab1" class="tab_content"> 
+ 
+     
+    <p><a href="#">Login Application</a></p>
+    <p>Search Application</p>
+    <p>CMS Application</p>
+    <p>Email Application</p>
+
+
+     </div><!-- #tab1 -->
+     <div id="tab2" class="tab_content"> 
+     	<p><a href="#">File uploading</a></p>
+    	<p>Login Application</p>
+      
+
+     </div><!-- #tab2 -->
+     
+      
+     
+ </div> <!-- .tab_container --> 
+
+</div> <!-- #container -->
+</body>
+</html>
